@@ -354,6 +354,21 @@
     text-transform: uppercase;
   }
 
+  /* ============ CASCO BADGE ============ */
+  .casco-badge{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 18px;
+    background: var(--volcanic);
+    color: var(--cream);
+    padding: 8px 16px;
+    border-radius: 99px;
+    font-size: 13.5px;
+    font-weight: 600;
+  }
+  .casco-badge svg{ flex-shrink: 0; }
+
   /* ============ FLOTA ============ */
   .flota-section{
     position: relative;
@@ -371,7 +386,7 @@
   }
   .flota__grid{
     display:grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 24px;
   }
   .card{
@@ -630,7 +645,7 @@
   /* ============ FLOAT CHAT BUTTON ============ */
   .float-chat{
     position: fixed;
-    bottom: 100px;
+    bottom: 172px;
     right: 28px;
     z-index: 200;
     width: 60px;
@@ -651,6 +666,32 @@
   .float-chat svg{
     width: 28px;
     height: 28px;
+  }
+
+  /* ============ FLOAT EMAIL BUTTON ============ */
+  .float-email{
+    position: fixed;
+    bottom: 100px;
+    right: 28px;
+    z-index: 200;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--sand);
+    color: var(--volcanic);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow: 0 4px 20px rgba(217,163,92,0.50);
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .float-email:hover{
+    transform: scale(1.10);
+    box-shadow: 0 6px 28px rgba(217,163,92,0.65);
+  }
+  .float-email svg{
+    width: 26px;
+    height: 26px;
   }
 
   /* ============ FLOAT CALL BUTTON ============ */
@@ -887,7 +928,7 @@
   /* ============ RESPONSIVE ============ */
   @media (max-width: 920px){
     .nosotros{ grid-template-columns: 1fr; gap: 48px; }
-    .flota__grid{ grid-template-columns: repeat(2, 1fr); }
+    .flota__grid{ grid-template-columns: repeat(2, 1fr) !important; }
     .reservas__grid{ grid-template-columns: 1fr; }
     .ubicacion__grid{ grid-template-columns: 1fr; gap: 32px; }
     .ubicacion__mapa iframe{ height: 320px; }
@@ -988,8 +1029,10 @@
     .chat-input{ font-size: 15px; padding: 14px 16px; }
 
     /* Botones flotantes */
-    .float-chat{ bottom: 84px; right: 16px; width: 52px; height: 52px; }
+    .float-chat{ bottom: 148px; right: 16px; width: 52px; height: 52px; }
     .float-chat svg{ width: 24px; height: 24px; }
+    .float-email{ bottom: 84px; right: 16px; width: 52px; height: 52px; }
+    .float-email svg{ width: 22px; height: 22px; }
     .float-call{ bottom: 20px; right: 16px; width: 52px; height: 52px; }
     .float-call svg{ width: 24px; height: 24px; }
 
